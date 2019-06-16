@@ -7,41 +7,100 @@
     <meta name="author" content="">
     <link rel="icon" href="image/one1.jpg">
 
-    <title>Signin Template for Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-
+    <title>login</title>
     <!-- Bootstrap core CSS -->
-    <link href="./singin_files/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="./singin_files/signin.css" rel="stylesheet">
+    <style>
+    .container {
+      max-width: 400px;
+    }
+    body {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    </style>
   </head>
 
-  <body class="text-center">
-    <form class="form-signin">
-      <img class="mb-4" src="image/one2.jpg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesión</h1>
-      <label for="inputEmail" class="sr-only">Correo Electrónico</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required="" autofocus="">
-      <label for="inputPassword" class="sr-only">Contraseña</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Recordarme
-        </label>
+  <body class="bg-light">
+    
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="mb-4" src="image/one2.jpg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesión</h1>
       </div>
-      <div class="row">
-        <div class="col-sm">
-          <a class="btn btn-lg btn-primary btn-block" href="singin.html">Registrarse</a>
+      <form class="needs-validation" novalidate="">
+
+        <div class="mb-3">
+          <label for="email">Correo Electronico</label>
+          <input type="email" class="form-control" id="email" placeholder="davemuyhombre@magico.com" required="">
+          <div class="invalid-feedback">
+            Por favor ingresa un formato válido.
+          </div>
         </div>
-        <div class="col-sm">
-          <a class="btn btn-lg btn-primary btn-block" href="index.html">Ingresar</a>
+
+        <div class="mb-3">
+          <label for="pass">Contraseña</label>
+          <input type="password" id="pass" class="form-control" placeholder="Contraseña" required="">
+          <div class="invalid-feedback">
+            Por favor ingresa tu contraseña.
+          </div>
         </div>
-      </div>
-      
-      <p class="mt-5 mb-3 text-muted">© 2019</p>
-    </form>
+        <div class="row">
+          <div class="col-sm">
+            <a class="btn btn-lg btn-primary btn-block" href="singin.html">Registrarse</a>
+          </div>
+          <div class="col-sm">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Ingresar</button>
+          </div>  
+        </div>
+      </form>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+          <hr class="featurette-divider">
+          <p class="mb-1">© 2019 One Code Man</p>
+      </footer>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+
+              const valid = form.checkValidity() === true;
+              
+              if(!valid) {
+
+                //location.href='login.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              if(valid)
+              {
+                location.href='index.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              else
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
   
 
 </body></html>
