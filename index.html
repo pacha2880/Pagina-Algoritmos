@@ -9,12 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="image/one1.jpg">
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/sticky-footer-navbar/">
 
     <title>One Code Man</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <style>
     body {
@@ -25,45 +24,46 @@
 
   <body>
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">One Code Man</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+        <a class="navbar-brand" href="#">One Code Man</a>
+        <button class="navbar-toggler" type="button" data-toggle="collpse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+          </form>
+        </div>
+      </div>  
+    </nav>
     <!-- Begin page content -->
     <div class="container">
       <h2>Banco de Problemas</h2>
             <div class="table-responsive">
-              <table class="table table-striped">
+              <table class="table table-striped table-sm">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -81,7 +81,7 @@
                     <td>Matematicas</td>
                     <td>8</td>
                     <td><a href="https://codeforces.com">Codeforces</a></td>
-                    <td><span class="label label-default">No intentado</span></td>
+                    <td><span class="badge badge-pill badge-secondary">No intentado</span></td>
                   </tr>
                   <tr>
                     <td>2</td>
@@ -89,7 +89,7 @@
                     <td>Implementacion</td>
                     <td>1</td>
                     <td><a href="https://uva.onlinejudge.org">UVa</a></td>
-                    <td><span class="label label-primary">Tiempo limite</span></td>
+                    <td><span class="badge badge-pill badge-primary">Tiempo limite</span></td>
                   </tr>
                   <tr>
                     <td>3</td>
@@ -97,7 +97,7 @@
                     <td>Grafos</td>
                     <td>4</td>
                     <td><a href="https://www.codechef.com">CODECHEF</a></td>
-                    <td><span class="label label-success">Resuelto</span></td>
+                    <td><span class="badge badge-pill badge-success">Resuelto</span></td>
                   </tr>
                   <tr>
                     <td>4</td>
@@ -105,7 +105,7 @@
                     <td>Grafos</td>
                     <td>5</td>
                     <td><a href="https://codeforces.com">Codeforces</a></td>
-                    <td><span class="label label-danger">Incorrecto</span></td>
+                    <td><span class="badge badge-pill badge-danger">Incorrecto</span></td>
                   </tr>
                   <tr>
                     <td>5</td>
@@ -113,7 +113,7 @@
                     <td>Programacion Dinamica</td>
                     <td>6</td>
                     <td><a href="https://atcoder.jp">AtCoder</a></td>
-                    <td><span class="label label-warning">Error compilacion</span></td>
+                    <td><span class="badge badge-pill badge-warning">Error compilacion</span></td>
                   </tr>
                   <tr>
                     <td>6</td>
@@ -121,7 +121,7 @@
                     <td>Geometria</td>
                     <td>2</td>
                     <td><a href="https://jv.umsa.bo/">juez patito</a></td>
-                    <td><span class="label label-info">Error en ejecucion </span></td>
+                    <td><span class="badge badge-pill badge-info">Error en ejecucion </span></td>
                   </tr>
                 </tbody>
               </table>
@@ -138,14 +138,12 @@
     </div>
 
 
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="https://getbootstrap.com/docs/3.4/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://getbootstrap.com/docs/3.4/assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
   </body>
 </html>
