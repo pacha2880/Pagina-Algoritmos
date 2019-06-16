@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)https://getbootstrap.com/docs/4.0/examples/sign-in/? -->
+<!-- saved from url=(0052)https://getbootstrap.com/docs/4.0/examples/checkout/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,41 +7,129 @@
     <meta name="author" content="">
     <link rel="icon" href="image/one1.jpg">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Checkout example for Bootstrap</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
     <!-- Bootstrap core CSS -->
-    <link href="./singin_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./Checkout example for Bootstrap_files/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./singin_files/signin.css" rel="stylesheet">
+    <link href="./Checkout example for Bootstrap_files/form-validation.css" rel="stylesheet">
   </head>
 
-  <body class="text-center">
-    <form class="form-signin">
-      <img class="mb-4" src="image/one2.jpg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesión</h1>
-      <label for="inputEmail" class="sr-only">Correo Electrónico</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required="" autofocus="">
-      <label for="inputPassword" class="sr-only">Contraseña</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Recordarme
-        </label>
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="image/one2.jpg" alt="" width="72" height="72">
+        <h2>Formulario de Registro</h2>
+        <p class="lead">Por favor ingresa tus datos para registrarte en la mejor pagina de algoritmos en español.</p>
       </div>
-      <div class="row">
-        <div class="col-sm">
-          <a class="btn btn-lg btn-primary btn-block" href="singin.html">Registrarse</a>
+
+  
+      <h4 class="mb-3">Registrate</h4>
+      <form class="needs-validation" novalidate="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Nombres</label>
+            <input type="text" class="form-control" id="firstName" placeholder="José Ronaldo" value="" required="">
+            <div class="invalid-feedback">
+              Por favor ingresa tus nombres.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Apellidos</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Franco Jaldín" value="" required="">
+            <div class="invalid-feedback">
+              Por favor ingresa tus apellidos.
+            </div>
+          </div>
         </div>
-        <div class="col-sm">
-          <a class="btn btn-lg btn-primary btn-block" href="index.html">Ingresar</a>
+
+
+        <div class="mb-3">
+          <label for="email">Correo Electronico</label>
+          <input type="email" class="form-control" id="email" placeholder="davemuyhombre@magico.com" required="">
+          <div class="invalid-feedback">
+            Por favor ingresa un formato válido.
+          </div>
         </div>
-      </div>
-      
-      <p class="mt-5 mb-3 text-muted">© 2019</p>
-    </form>
+
+        <div class="mb-3">
+          <label for="nacimiento">Fecha de Nacimiento</label>
+          <input class="form-control" type="date" value="1999-10-31" id="nacimiento">
+          <div class="invalid-feedback">
+            Por favor ingresa tu fecha de nacimiento.
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="pass">Contraseña</label>
+          <input type="password" id="pass" class="form-control" placeholder="Contraseña" required="">
+          <div class="invalid-feedback">
+            Por favor ingresa tu contraseña.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="pass1">Confirma tu contraseña</label>
+          <input type="password" id="pass1" class="form-control" placeholder="Contraseña" required="">
+          <div class="invalid-feedback">
+            Por favor confirma tu contraseña.
+          </div>
+        </div>
+        
+      <button class="btn btn-primary btn-lg btn-block" type="submit" >Confirmar Registro</button>
+        
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2019 One Code Man</p>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Checkout example for Bootstrap_files/jquery-3.2.1.slim.min.js.download" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./Checkout example for Bootstrap_files/popper.min.js.download"></script>
+    <script src="./Checkout example for Bootstrap_files/bootstrap.min.js.download"></script>
+    <script src="./Checkout example for Bootstrap_files/holder.min.js.download"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+
+              const valid = form.checkValidity() === true;
+              
+              if(!valid) {
+
+                //location.href='login.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              if(valid)
+              {
+                location.href='login.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              else
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
   
 
 </body></html>
