@@ -66,13 +66,137 @@
         </div>
       </div>
     </nav>
-    implementacion
+    
+    <div class="container text-left mb-5 mt-3">
+      <div class="container">
+        <h2 class="pb-3 mb-4 font-italic border-bottom">
+          Cola
+        </h2>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">Definición</h2>
+
+          <p>Una cola es una estructura de datos lineal FIFO, First In First Out. El primer elemento en entrar a la estructura sera el primero en salir.</p>
+          <p>Su funcionamiento similar al de una fila/cola de, por ejemplo, un banco.</p>
+          <hr>
+          
+          <h2 class="blog-post-title">Declaracion y operaciones</h2>
+          <p>Declaracion: queue&#60;tipo_de_dato&#62; nombre</p>
+          <p>Tiene las siguientes operaciones:</p>
+          <ul>
+            <li>empty</li>
+            <li>size</li>
+            <li>front</li>
+            <li>back</li>
+            <li>push</li>
+            <li>pop</li>
+          </ul>
+          <p><b>empty</b> devuelve un valor de tipo booleano indicando si la cola esta vacia</p>
+          <p><b>size</b> devuelve un valor de tipo entero indicando la cantidad de elementos dentro de la cola</p>
+          <p><b>front</b> devuelve el valor del frente de la cola</p>
+          <p><b>back</b> devuelve el valor del final de la cola</p>
+          <p><b>push</b> añade un elemento al final de la cola</p>
+          <p><b>pop</b> elimina el elemento del frente de la cola</p>
+          <hr>
+
+          <h3>Ejemplo</h3>
+          <p class="text-monospace">
+            queue&#60;int&#62; cola; <a class="text-muted">// Crea una cola </a> <br>
+            cola.push(5); <br>
+            cola.push(2); <br>
+            cola.push(4); <br>
+            <a class="text-muted">// La cola tiene los elementos 5, 2, 4 del frente al final</a> <br> <br>
+            cola.pop(); <a class="text-muted">// Elimina el elemento del frente</a> <br>
+            cout &#60;&#60; cola.size() <a class="text-muted">// Imprime 3, el tamaño de la cola</a> <br>
+            cout &#60;&#60; cola.front() <a class="text-muted">// Imprime 2, el elemento del frente</a> <br>
+          </p>
+          <hr>
+
+          <h3>Cuestionario</h3>
+          <form action="">
+            <p>¿Si se tienen las siguientes operaciones: <a class="text-monospace font-weight-bold">cola.push(2); cola.push(3); cola.push(1); cola.pop();</a> que valor devolveria <a class="text-monospace font-weight-bold">cola.front()</a>?</p>
+            <div class="form-group form-row">
+              <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="incorrecta">
+                    2
+                  </label>
+              </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="correcta">
+                  3
+                </label>
+              </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="incorrecta">
+                  1
+                </label>
+              </div>
+            </div>
+
+            <p>¿Que pasa si haces <a class="text-monospace font-weight-bold">cola.pop()</a> a una cola vacia, que pasa?</p>
+
+            <div class="form-group form-row">
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="incorrecta">
+                    Error de compilacion
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="correcta">
+                    Error en tiempo de ejecucion
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="incorrecta">
+                    No pasa nada
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-secondary">Enviar respuestas</button>
+          </form>
+          <hr>
+
+          <h3>Problemas sugeridos</h3>
+          <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Team queue</a>
+                <span class="badge badge-secondary badge-pill">No intentado</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Throwing cards away I</a>
+                  <span class="badge badge-primary badge-pill">Resuelto</span>
+                </li>
+          </ul>
+          <hr>
+          <!--form action=""-->
+            <button class="btn btn-info" onclick="ocultarAlert()">Finalizar</button>
+          <!--/form-->
+          <br>
+          <!-- {#if finalizado} en handlebars -->
+          <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
+            ¡Tema finalizado! <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+          </div>
+      </div>
+    </div>
+  </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    function ocultarAlert() {
+      let alert = document.getElementById("alertFinalizado");
+      alert.style.display = "block";
+    }
+  </script>
   </body>
   <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
