@@ -18,25 +18,24 @@
     <style>
     body {
       padding-top: 70px;
+      
     }
     </style>
   </head>
 
-  <body>
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <body class="text-center">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="image/one2.jpg" height="30">
           One Code Man
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collpse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample04">
+        <div class="collapse navbar-collapse" id="navbarsExample03">
           <ul class="navbar-nav mr-auto">
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="problemas.html">Problemas</a>
             </li>
@@ -46,9 +45,13 @@
             <li class="nav-item">
               <a class="nav-link" href="foro.html">Foro</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="info.html">Informacion</a>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown">
+                <a class="dropdown-item" href="informacion1.html">¿Qué es la programación competitiva?</a>
+                <a class="dropdown-item" href="informacion2.html">¿Qué es la OBI?</a>
+                <a class="dropdown-item" href="informacion3.html">¿Qué es la ICPC?</a>
+              </div>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0 needs-validation" novalidate="">
@@ -60,16 +63,16 @@
             Perfil
           </a>
         </div>
-      </div>  
+      </div>
     </nav>
     
-    vacio
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
   <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
@@ -104,5 +107,4 @@
         }, false);
       })();
     </script>
-  </body>
 </html>
