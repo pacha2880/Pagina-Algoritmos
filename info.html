@@ -43,30 +43,25 @@
               <a class="nav-link" href="algoritmos.html">Algoritmos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link href="foro.html">Foro</a>
+              <a class="nav-link" href="foro.html">Foro</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Informacion</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-              </li>
           </ul>
-          <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search">
+          <form class="form-inline mt-2 mt-md-0 needs-validation" novalidate="">
+            <input class="form-control mr-sm-2" type="text" placeholder="Buscar Usuarios" value="" required="">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
           </form>
+          <a class="btn btn-lg btn-dark" href="perfil1.html">
+            <img src="image/ronaldo.jpg" height="24">
+            Perfil
+          </a>
         </div>
       </div>  
     </nav>
    
-
+    informacion
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -74,5 +69,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
-  </body>
+  <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+
+              const valid = form.checkValidity() === true;
+              
+              if(!valid) {
+
+                //location.href='login.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              if(valid)
+              {
+                location.href='perfil2.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              else
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
 </html>

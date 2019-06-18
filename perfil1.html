@@ -1,0 +1,188 @@
+
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="image/one1.jpg">
+
+        <title>One Code Man</title>
+
+        <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+        <style>
+        body {
+          padding-top: 90px;
+        }
+        </style>
+      </head>
+
+      <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="image/one2.jpg" height="30">
+              One Code Man
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collpse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="problemas.html">Problemas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="algoritmos.html">Algoritmos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="foro.html">Foro</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="info.html">Informacion</a>
+                </li>
+              </ul>
+              <form class="form-inline mt-2 mt-md-0 needs-validation" novalidate="">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar Usuarios" value="" required="">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              </form>
+              <a class="btn btn-lg btn-dark" href="perfil1.html">
+                <img src="image/ronaldo.jpg" height="24">
+                Perfil
+              </a>
+            </div>
+          </div>  
+        </nav>
+        <div class="container">
+        <div class="row my-2">
+            <div class="col-lg-8 order-lg-2">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Editar</a>
+                    </li>
+                </ul>
+                <div class="tab-content py-4">
+                    <div class="tab-pane active" id="profile">
+                        <ul class="list-group">
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Nombres</strong></span>José Ronaldo</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Apellidos</strong></span>Franco Jaldin</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Correo Electronico</strong></span>davemuyhombre@magico.com</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Fecha de Nacimiento</strong></span>1999-10-31</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Problemas Resueltos</strong></span>576</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Problemas Intentados</strong></span>2140</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Estrellas Conseguidas</strong></span>87</li>
+                        </ul> 
+                    </div>
+                    <div class="container tab-pane" id="edit">
+                        <form>
+                            <div class="row">
+                              <div class="col-md-6 mb-3">
+                                <label for="firstName">Nombres</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="José Ronaldo" value="" required="">
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="lastName">Apellidos</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Franco Jaldín" value="" required="">
+                              </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                              <label for="email">Correo Electronico</label>
+                              <input type="email" class="form-control" id="email" placeholder="davemuyhombre@magico.com" required="">
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="frase">Frase Descriptiva</label>
+                              <input type="text" class="form-control" id="frase" placeholder="Me gustan los problemas de Probabilidad" value="" required="">
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="nacimiento">Fecha de Nacimiento</label>
+                              <input class="form-control" type="date" value="1999-10-31" id="nacimiento">
+                            </div>
+                            
+                            <div class="mb-3">
+                              <label for="pass">Contraseña</label>
+                              <input type="password" id="pass" class="form-control" placeholder="Contraseña" required="">
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="pass1">Confirma tu contraseña</label>
+                              <input type="password" id="pass1" class="form-control" placeholder="Contraseña" required="">
+                            </div>
+                            <div class="mb-3">
+                              <label for="pass1">Foto de perfil</label>
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                              </div>
+                            </div>
+                        </form>
+                                <input type="reset" class="btn btn-secondary" value="Cancelar">
+                                <input type="button" class="btn btn-primary" value="Guardar Cambios" onclick="location.href='perfil1.html';">
+                           
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 order-lg-1 text-center">
+                <img src="image/ronaldo.jpg" width="250" height="250" class="rounded-circle mx-auto img-fluid img-circle d-block" alt="avatar">
+                me gustan los problemas de probabilidad
+            </div>
+        </div>
+    </div>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script>
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function() {
+            'use strict';
+
+            window.addEventListener('load', function() {
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.getElementsByClassName('needs-validation');
+
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+
+                  const valid = form.checkValidity() === true;
+                  
+                  if(!valid) {
+
+                    //location.href='login.html';
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  if(valid)
+                  {
+                    location.href='perfil2.html';
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  else
+                  form.classList.add('was-validated');
+                }, false);
+              });
+            }, false);
+          })();
+        </script>
+      </body>
+    </html>

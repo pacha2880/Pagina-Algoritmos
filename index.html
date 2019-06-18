@@ -17,12 +17,13 @@
 
     <style>
     body {
-      padding-top: 70px;
+      padding-top: 80px;
+      background-color: #333;
     }
     </style>
   </head>
 
-  <body>
+  <body class="text-center">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -48,25 +49,24 @@
             <li class="nav-item">
               <a class="nav-link" href="info.html">Informacion</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-              </li>
           </ul>
-          <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search">
+          <form class="form-inline mt-2 mt-md-0 needs-validation" novalidate="">
+            <input class="form-control mr-sm-2" type="text" placeholder="Buscar Usuarios" value="" required="">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
           </form>
+          <a class="btn btn-lg btn-dark" href="perfil1.html">
+            <img src="image/ronaldo.jpg" height="24">
+            Perfil
+          </a>
         </div>
       </div>  
     </nav>
-   
-
+        <img class="mb-4" src="image/one4.png" >
+        <h1 class="text-light">One Code Man</h1>
+        <p class="lead text-light">One Code Man es una página en español para el aprendizaje de algoritmos</p>
+        <p class="lead">
+          <a href="algoritmos.html" class="btn btn-lg btn-secondary">Aprender Algoritmos</a>
+        </p>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -74,5 +74,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
-  </body>
+  <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+
+              const valid = form.checkValidity() === true;
+              
+              if(!valid) {
+
+                //location.href='login.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              if(valid)
+              {
+                location.href='perfil2.html';
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              else
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
 </html>
