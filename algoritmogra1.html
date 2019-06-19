@@ -66,13 +66,210 @@
         </div>
       </div>
     </nav>
-    grafos1
+    
+    <div class="container text-left mb-5 mt-3">
+      <div class="container">
+        <h2 class="pb-3 mb-4 font-italic border-bottom">
+          Dijsktra
+        </h2>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">Introduccion</h2>
+
+          <p>Se le proporciona un gráfico ponderado dirigido o no dirigido con n vértices y m bordes. Los pesos de todos los bordes son no negativos. También se le da un vértice de inicio s. Este artículo trata sobre cómo encontrar las longitudes de las rutas más cortas desde un vértice de inicio a todos los demás vértices, y muestra las rutas más cortas.</p>
+          <p>Este problema tambien es llamado caminos minimos de un solo origen.</p>
+          <img src="image/graph-shortestpath.png" class="img-fluid" alt="Responsive image">
+          <hr>
+          
+          <h2 class="blog-post-title">Algoritmo</h2>
+          <p>Aquí hay un algoritmo descrito por el científico informático holandés Edsger W. Dijkstra en 1959.</p>
+          <p>Vamos a crear una matriz d [] donde, para cada vértice v, almacenemos la longitud actual de la ruta más corta de s a v en d [v]. Inicialmente d [s] = 0, y para todos los demás vértices, esta longitud es igual a infinito. En la implementación, un número suficientemente grande (que se garantiza que es mayor que cualquier posible longitud de trayectoria) se elige como infinito.</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>d</mi>
+            <mo stretchy="false">[</mo>
+            <mi>v</mi>
+            <mo stretchy="false">]</mo>
+            <mo>=</mo>
+            <mi mathvariant="normal">&#x221E;<!-- ∞ --></mi>
+            <mo>,</mo>
+            <mtext>&#xA0;</mtext>
+            <mi>v</mi>
+            <mo>&#x2260;<!-- ≠ --></mo>
+            <mi>s</mi>
+          </math>
+          <p>Además, mantenemos una matriz booleana u [] que almacena para cada vértice v si está marcado. Inicialmente todos los vértices están sin marcar:</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>u</mi>
+            <mo stretchy="false">[</mo>
+            <mi>v</mi>
+            <mo stretchy="false">]</mo>
+            <mo>=</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="normal">f</mi>
+              <mi mathvariant="normal">a</mi>
+              <mi mathvariant="normal">l</mi>
+              <mi mathvariant="normal">s</mi>
+              <mi mathvariant="normal">e</mi>
+            </mrow>
+          </math>
+          <p>El algoritmo de Dijkstra se ejecuta para n iteraciones. En cada iteración se elige un vértice v como vértice no marcado que tiene el menor valor d [v]:</p>
+          <p>Evidentemente, en la primera iteración se seleccionará el vértice de inicio s.</p>
+          <p>El vértice seleccionado v está marcado. A continuación, desde el vértice se realizan relajaciones: se consideran todos los bordes de la forma (v, a) y, para cada vértice, el algoritmo intenta mejorar el valor d [a]. Si la longitud del borde actual es igual a len, el código para la relajación es:</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>d</mi>
+            <mo stretchy="false">[</mo>
+            <mtext>to</mtext>
+            <mo stretchy="false">]</mo>
+            <mo>=</mo>
+            <mo movablelimits="true" form="prefix">min</mo>
+            <mo stretchy="false">(</mo>
+            <mi>d</mi>
+            <mo stretchy="false">[</mo>
+            <mtext>to</mtext>
+            <mo stretchy="false">]</mo>
+            <mo>,</mo>
+            <mi>d</mi>
+            <mo stretchy="false">[</mo>
+            <mi>v</mi>
+            <mo stretchy="false">]</mo>
+            <mo>+</mo>
+            <mi>l</mi>
+            <mi>e</mi>
+            <mi>n</mi>
+            <mo stretchy="false">)</mo>
+          </math>
+          <p>El vértice seleccionado v está marcado. A continuación, desde el vértice se realizan relajaciones: se consideran todos los bordes de la forma (v, a) y, para cada vértice, el algoritmo intenta mejorar el valor d [a]. Si la longitud del borde actual es igual a len, el código para la relajación es:</p>
+          <p>Tenga en cuenta que si algunos vértices son inaccesibles desde el vértice inicial s, los valores d [v] para ellos permanecerán infinitos. Obviamente, las últimas iteraciones del algoritmo elegirán esos vértices, pero no se hará ningún trabajo útil para ellos. Por lo tanto, el algoritmo se puede detener tan pronto como el vértice seleccionado tenga una distancia infinita.</p>
+          <hr>
+
+          <h3>implementación</h3>
+          <p>El algoritmo de Dijkstra realiza n iteraciones. En cada iteración selecciona un vértice no marcado v con el valor más bajo d [v], lo marca y verifica todos los bordes (v, a) intentando mejorar el valor d [a].</p>
+          <p>El tiempo de ejecución del algoritmo consiste en:</p>
+          <ul>
+            <li>n busca un vértice con el valor más pequeño d [v] entre O (n) vértices sin marcar</li>
+            <li>m intentos de relajacion</li>
+          </ul>
+          <p>Para la implementación más simple de estas operaciones en cada iteración, la búsqueda de vértices requiere operaciones O (n), y cada relajación se puede realizar en O (1). Por lo tanto, el comportamiento asintótico resultante del algoritmo es:</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>O</mi>
+            <mo stretchy="false">(</mo>
+            <msup>
+              <mi>n</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+            <mi>m</mi>
+            <mo stretchy="false">)</mo>
+          </math>
+          <p>Esta complejidad es óptima para gráficos densos, es decir, cuando m≈n2. Sin embargo, en gráficos dispersos, cuando m es mucho más pequeño que el número máximo de bordes n2, el problema puede resolverse en complejidad O (nlogn + m). El algoritmo y la implementación se pueden encontrar en el artículo Dijkstra en gráficos dispersos.</p>
+          <pre class="text-monospace">
+const int INF = 1000000000;
+vector<vector<pair<int, int>>> adj;
+
+void dijkstra(int s, vector<int> & d, vector<int> & p) {
+    int n = adj.size();
+    d.assign(n, INF);
+    p.assign(n, -1);
+    vector<bool> u(n, false);
+
+    d[s] = 0;
+    for (int i = 0; i < n; i++) {
+        int v = -1;
+        for (int j = 0; j < n; j++) {
+            if (!u[j] && (v == -1 || d[j] < d[v]))
+                v = j;
+        }
+
+        if (d[v] == INF)
+            break;
+
+        u[v] = true;
+        for (auto edge : adj[v]) {
+            int to = edge.first;
+            int len = edge.second;
+
+            if (d[v] + len < d[to]) {
+                d[to] = d[v] + len;
+                p[to] = v;
+            }
+        }
+    }
+}
+          </pre>
+          <hr>
+
+          <h3>Cuestionario</h3>
+          <form action="">
+            <p>¿En un grafo bidireccional, Dijkstra funciona con aristas de peso negativo?</p>
+            <div class="form-group form-row">
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="incorrecta">
+                  Si
+                </label>
+              </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="correcta">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <p>¿Dijkstra funciona en un grafo con aristas repetidas de peso positivo?</p>
+
+            <div class="form-group form-row">
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="correcta">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="incorrecta">
+                    No
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-secondary">Enviar respuestas</button>
+          </form>
+          <hr>
+
+          <h3>Problemas sugeridos</h3>
+          <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a target="_blank" href="https://codeforces.com/problemset/problem/20/C">Dijkstra?</a>
+                <span class="badge badge-primary badge-pill">Resuelto</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a target="_blank" href="http://acm.timus.ru/problem.aspx?space=1&num=1930">Ivan's Car</a>
+                  <span class="badge badge-danger badge-pill">Incorrecto</span>
+                </li>
+          </ul>
+          <hr>
+          <!--form action=""-->
+            <button class="btn btn-info" onclick="ocultarAlert()">Finalizar</button>
+          <!--/form-->
+          <br>
+          <!-- {#if finalizado} en handlebars -->
+          <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
+            ¡Tema finalizado! <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+          </div>
+      </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    function ocultarAlert() {
+      let alert = document.getElementById("alertFinalizado");
+      alert.style.display = "block";
+    }
+  </script>
   </body>
   <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
