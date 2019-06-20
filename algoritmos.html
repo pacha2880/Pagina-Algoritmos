@@ -579,6 +579,7 @@
       function clearBox(elementID, el2, avanzada)
       {
           nada = false;
+          todo = false;
           algoritmos = [
           {
             "#": 1,
@@ -786,6 +787,7 @@
         }
         else
         {
+          todo = true;
           console.log("busqueda simple" + buscado);
           var i, j, k, l, fro, to, coin, numero = 1, axx = buscado;
           arreglo = buscado.split(" ");
@@ -873,7 +875,7 @@
         }
         //console.log(algoritmos[5]["#"]);
         //console.log(datos);
-        if(buscado.length > 0 || nada)
+        if(buscado.length > 0 && todo || nada)
         {
           document.getElementById(elementID).innerHTML = "";  
           document.getElementById(el2).innerHTML = "";
