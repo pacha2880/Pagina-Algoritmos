@@ -170,6 +170,19 @@
         }
       </script>
       <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://127.0.0.1:5000/problemasResueltos', true);
+        xhr.send();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let res = JSON.parse( xhr.response );
+            console.log(res);
+            let problemas = document.getElementById("problemasResueltos");
+            problemas.innerHTML = res.problemasResueltos;
+          }
+        }
+      </script>
+      <script>
           // Example starter JavaScript for disabling form submissions if there are invalid fields
           (function() {
             'use strict';
