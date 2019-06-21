@@ -198,6 +198,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
+    var cuestionarioResuelto = false;
+    var algoritmoYaAprendido = false;
+
     var nombreAlgoritmo = 'cola';
     function activarAlert() {
       var xhr = new XMLHttpRequest();
@@ -208,17 +211,35 @@
           let res = JSON.parse( xhr.response );
           console.log(res.algoritmos);
           console.log(res.algoritmos[nombreAlgoritmo]);
+          console.log(res.puntajes);
+          console.log(res.problemasSugeridos);
           if (res.algoritmos[nombreAlgoritmo] == true)
           {
             let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-success mt-2";
             alert.innerHTML = 'Este algoritmo ya ha sido aprendido :D <br><a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>'
+          }
+          else if (res.puntajes.cola != 2)
+          {
+            let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-warning mt-2";
+            alert.innerHTML = 'Tiene que terminar correctamente el cuestionario';
+          }
+          else if (res.problemasSugeridos.colas1 == false || res.problemasSugeridos.colas2 == false) {
+            let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-warning mt-2";
+            alert.innerHTML = 'Debe resolver todos los problemas sugeridos';
           }
           else
           {
             aumentarEstrella();
+            actualizarAlgoritmo(nombreAlgoritmo);
+            algoritmoYaAprendido = true;
+            let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-success mt-2";
+            alert.innerHTML = `¡Tema finalizado! <br>¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br><a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>`
           }
           ocultarAlert();
-          actualizarAlgoritmo(nombreAlgoritmo);
         }
       }
     }
@@ -241,7 +262,7 @@
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.send(`nombre=${nombre}`);
     }
-    
+
     function resultadoDeCuestionario(){
       setTimeout(() => {
         let alert = document.getElementById("alertCuestionario");
@@ -254,6 +275,11 @@
             let res = JSON.parse( xhr.response );
             console.log(res);
             alert.innerHTML = `Puntaje: ${res.puntaje}`;
+            if (res.puntaje == 2) cuestionarioResuelto = true;
+            if(res.puntaje < 2)
+              alert.className = "alert alert-warning mt-2";
+            else
+              alert.className = "alert alert-success mt-2";
           }
         }
       }, 100);
