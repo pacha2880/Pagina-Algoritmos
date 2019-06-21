@@ -283,21 +283,35 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
           if (res.algoritmos[nombreAlgoritmo] == true)
           {
             let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-success mt-2";
             alert.innerHTML = 'Este algoritmo ya ha sido aprendido :D <br><a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>'
+          }
+          else if (res.puntajes.dijkstra != 2) {
+            let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-warning mt-2";
+            alert.innerHTML = 'Tiene que terminar correctamente el formulario';
+          }
+          else if (res.problemasSugeridos.dijkstra1 == false || res.problemasSugeridos.dijkstra2 == false) {
+            let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-warning mt-2";
+            alert.innerHTML = 'Debe resolver todos los problemas sugeridos';
           }
           else
           {
             aumentarEstrella();
+            actualizarAlgoritmo(nombreAlgoritmo);
+            let alert = document.getElementById("alertFinalizado");
+            alert.className = "alert alert-success mt-2";
+            alert.innerHTML = `¡Tema finalizado! <br>¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br><a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>`;
           }
           ocultarAlert();
-          actualizarAlgoritmo(nombreAlgoritmo);
         }
       }
     }
 
     function aumentarEstrella() {
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'http://127.0.0.1:5000/actualizarEstrellas/', true);
+      xhr.open('POST', 'http://127.0.0.1:5000/actualizarEstrellas', true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.send();
     }
@@ -326,6 +340,10 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
             let res = JSON.parse( xhr.response );
             console.log(res);
             alert.innerHTML = `Puntaje: ${res.puntaje}`;
+            if(res.puntaje < 2)
+              alert.className = "alert alert-warning mt-2";
+            else
+              alert.className = "alert alert-success mt-2";
           }
         }
       }, 100);
