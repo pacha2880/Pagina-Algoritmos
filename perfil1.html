@@ -86,9 +86,9 @@
                             <li class="list-group-item text-right"><span class="pull-left"><strong>Apellidos</strong></span>Franco Jaldin</li>
                             <li class="list-group-item text-right"><span class="pull-left"><strong>Correo Electronico</strong></span>davemuyhombre@magico.com</li>
                             <li class="list-group-item text-right"><span class="pull-left"><strong>Fecha de Nacimiento</strong></span>1999-10-31</li>
-                            <li class="list-group-item text-right"><span class="pull-left"><strong>Problemas Resueltos</strong></span>576</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Problemas Resueltos</strong></span><a id="problemasResueltos">576</a></li>
                             <li class="list-group-item text-right"><span class="pull-left"><strong>Problemas Intentados</strong></span>2140</li>
-                            <li class="list-group-item text-right"><span class="pull-left"><strong>Estrellas Conseguidas</strong></span>87</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Estrellas Conseguidas</strong></span><a id="estrellasConseguidas">87</a></li>
                         </ul> 
                     </div>
                     <div class="container tab-pane" id="edit">
@@ -156,6 +156,19 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://127.0.0.1:5000/', true);
+        xhr.send();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let res = JSON.parse( xhr.response );
+            console.log(res);
+            let estrellas = document.getElementById("estrellasConseguidas");
+            estrellas.innerHTML = res.estrellasConseguidas;
+          }
+        }
+      </script>
       <script>
           // Example starter JavaScript for disabling form submissions if there are invalid fields
           (function() {
