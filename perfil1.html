@@ -157,12 +157,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script>
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://127.0.0.1:5000/', true);
-        xhr.send();
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-            let res = JSON.parse( xhr.response );
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open('GET', 'http://127.0.0.1:5000/', true);
+        xhr2.send();
+        xhr2.onreadystatechange = () => {
+          if (xhr2.readyState == 4 && xhr2.status == 200) {
+            let res = JSON.parse( xhr2.response );
+            console.log("se recibio respuesta para estrellas");
             console.log(res);
             let estrellas = document.getElementById("estrellasConseguidas");
             estrellas.innerHTML = res.estrellasConseguidas;
