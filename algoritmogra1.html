@@ -353,6 +353,7 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
               console.log("Hay envio del problema Number Maze");
               let veredicto = document.getElementById("veredictoProblema1");
               if (sub[2] == 90) {
+                actualizarProblemasResueltos('dijkstra1');
                 veredicto.className = "badge badge-success badge-pill";
                 veredicto.innerHTML = "Resuelto";
               }
@@ -362,12 +363,20 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
               console.log("Hay envio del problema Sending email");
               let veredicto = document.getElementById("veredictoProblema2");
               if (sub[2] == 90) {
+                actualizarProblemasResueltos('dijkstra2');
                 veredicto.className = "badge badge-success badge-pill";
                 veredicto.innerHTML = "Resuelto";
               }
             }
           });
         }
+      }
+
+      function actualizarProblemasResueltos(nombre) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://127.0.0.1:5000/actualizarProblema/', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(`nombre=${nombre}`);
       }
     </script>
 
