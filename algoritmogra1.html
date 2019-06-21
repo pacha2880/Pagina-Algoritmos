@@ -199,7 +199,7 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
           <hr>
 
           <h3>Cuestionario</h3>
-          <form action="">
+          <form action="http://127.0.0.1:5000/cuestionarioDijsktra" method="POST" id="cuestionario">
             <p>¿En un grafo bidireccional, Dijkstra funciona con aristas de peso negativo?</p>
             <div class="form-group form-row">
               <div class="form-check form-check-inline col">
@@ -219,20 +219,23 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
             <p>¿Dijkstra funciona en un grafo con aristas repetidas de peso positivo?</p>
 
             <div class="form-group form-row">
-                <div class="form-check form-check-inline col">
-                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
-                  <label class="form-check-label" for="correcta">
-                    Si
-                  </label>
-                </div>
-                <div class="form-check form-check-inline col">
-                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="incorrecta">
-                    No
-                  </label>
-                </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="correcta">
+                  Si
+                </label>
               </div>
-              <button type="submit" class="btn btn-secondary">Enviar respuestas</button>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="incorrecta">
+                  No
+                </label>
+              </div>
+            </div>
+              <button type="submit" class="btn btn-secondary" onclick="resultadoDeCuestionario();">Enviar respuestas</button>
+              <div id="alertCuestionario" class="alert alert-success mt-2" role="alert" style="display:none;">
+                  
+              </div>
           </form>
           <hr>
 
@@ -240,7 +243,7 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
           <ul class="list-group">
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a target="_blank" href="https://codeforces.com/problemset/problem/20/C">Dijkstra?</a>
-                <span class="badge badge-primary badge-pill">Resuelto</span>
+                <span class="badge badge-success badge-pill">Resuelto</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                   <a target="_blank" href="http://acm.timus.ru/problem.aspx?space=1&num=1930">Ivan's Car</a>
@@ -249,12 +252,14 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
           </ul>
           <hr>
           <!--form action=""-->
-            <button class="btn btn-info" onclick="ocultarAlert()">Finalizar</button>
+            <button class="btn btn-info" onclick="activarAlert()">Finalizar</button>
           <!--/form-->
           <br>
           <!-- {#if finalizado} en handlebars -->
           <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
-            ¡Tema finalizado! <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+            ¡Tema finalizado! <br>
+            ¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br>
+            <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
           </div>
       </div>
     </div>
@@ -265,9 +270,54 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
+    var nombreAlgoritmo = 'dijkstra';
+    function activarAlert() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://127.0.0.1:5000/', true);
+      xhr.send();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          let res = JSON.parse( xhr.response );
+          console.log(res.algoritmos);
+          console.log(res.algoritmos[nombreAlgoritmo]);
+          if (res.algoritmos[nombreAlgoritmo] == true)
+          {
+            let alert = document.getElementById("alertFinalizado");
+            alert.innerHTML = 'Este algoritmo ya ha sido aprendido :D <br><a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>'
+          }
+          ocultarAlert();
+          actualizarAlgoritmo(nombreAlgoritmo);
+        }
+      }
+    }
+
     function ocultarAlert() {
       let alert = document.getElementById("alertFinalizado");
       alert.style.display = "block";
+    }
+
+    function actualizarAlgoritmo(nombre) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://127.0.0.1:5000/actualizarAlgoritmo/', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send(`nombre=${nombre}`);
+    }
+    
+    function resultadoDeCuestionario(){
+      setTimeout(() => {
+        let alert = document.getElementById("alertCuestionario");
+        alert.style.display = "block";
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://127.0.0.1:5000/resultadoCuestionario/', true);
+        xhr.send();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let res = JSON.parse( xhr.response );
+            console.log(res);
+            alert.innerHTML = `Puntaje: ${res.puntaje}`;
+          }
+        }
+      }, 100);
     }
   </script>
   </body>
