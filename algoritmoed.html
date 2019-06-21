@@ -170,11 +170,11 @@
           <ul class="list-group">
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Team queue</a>
-                <span class="badge badge-secondary badge-pill">No intentado</span>
+                <span id="veredictoProblema1" class="badge badge-secondary badge-pill">No resuelto</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                   <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Throwing cards away I</a>
-                  <span class="badge badge-success badge-pill">Resuelto</span>
+                  <span id="veredictoProblema2" class="badge badge-secondary badge-pill">No resuelto</span>
                 </li>
           </ul>
           <hr>
@@ -260,6 +260,47 @@
     }
 
   </script>
+
+  <script>
+    var userID = 371974;
+    // ronaldo0:  371974
+    // MickyOr:   399158
+    /*
+      Team queue:           481
+      Throwing cards away:  1876
+    */
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', `https://uhunt.onlinejudge.org/api/subs-user/${userID}`, true);
+    xhr.send();
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        let res = JSON.parse( xhr.response );
+        console.log(res);
+        res.subs.forEach(sub => {
+          if ( sub[1] == 481 )
+          {
+            console.log("Hay envio del problema Team Queue");
+            let veredicto = document.getElementById("veredictoProblema1");
+            if (sub[2] == 90) {
+              veredicto.className = "badge badge-success badge-pill";
+              veredicto.innerHTML = "Resuelto";
+            }
+          }
+          if ( sub[1] == 1876 )
+          {
+            console.log("Hay envio del problema Throwing cards away");
+            let veredicto = document.getElementById("veredictoProblema2");
+            if (sub[2] == 90) {
+              veredicto.className = "badge badge-success badge-pill";
+              veredicto.innerHTML = "Resuelto";
+            }
+          }
+        });
+      }
+    }
+  </script>
+
   </body>
   <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
