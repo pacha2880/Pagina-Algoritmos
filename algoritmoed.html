@@ -114,7 +114,7 @@
           <hr>
 
           <h3>Cuestionario</h3>
-          <form action="">
+          <form action="http://127.0.0.1:5000/cuestionarioCola" method="POST" id="cuestionario">
             <p>¿Si se tienen las siguientes operaciones: <a class="text-monospace font-weight-bold">cola.push(2); cola.push(3); cola.push(1); cola.pop();</a> que valor devolveria <a class="text-monospace font-weight-bold">cola.front()</a>?</p>
             <div class="form-group form-row">
               <div class="form-check form-check-inline col">
@@ -130,7 +130,7 @@
                 </label>
               </div>
               <div class="form-check form-check-inline col">
-                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option3">
                 <label class="form-check-label" for="incorrecta">
                   1
                 </label>
@@ -153,13 +153,16 @@
                   </label>
                 </div>
                 <div class="form-check form-check-inline col">
-                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option3">
                   <label class="form-check-label" for="incorrecta">
                     No pasa nada
                   </label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-secondary">Enviar respuestas</button>
+              <button type="submit" class="btn btn-secondary" onclick="resultadoDeCuestionario();">Enviar respuestas</button>
+              <div id="alertCuestionario" class="alert alert-success mt-2" role="alert" style="display:none;">
+                  
+              </div>
           </form>
           <hr>
 
@@ -171,17 +174,19 @@
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                   <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Throwing cards away I</a>
-                  <span class="badge badge-primary badge-pill">Resuelto</span>
+                  <span class="badge badge-success badge-pill">Resuelto</span>
                 </li>
           </ul>
           <hr>
           <!--form action=""-->
-            <button class="btn btn-info" onclick="ocultarAlert()">Finalizar</button>
+            <button class="btn btn-info" onclick="activarAlert();">Finalizar</button>
           <!--/form-->
           <br>
           <!-- {#if finalizado} en handlebars -->
           <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
-            ¡Tema finalizado! <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+            ¡Tema finalizado! <br>
+            ¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br>
+            <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
           </div>
       </div>
     </div>
@@ -193,10 +198,56 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
+    var nombreAlgoritmo = 'cola';
+    function activarAlert() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://127.0.0.1:5000/', true);
+      xhr.send();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          let res = JSON.parse( xhr.response );
+          console.log(res.algoritmos);
+          console.log(res.algoritmos[nombreAlgoritmo]);
+          if (res.algoritmos[nombreAlgoritmo] == true)
+          {
+            let alert = document.getElementById("alertFinalizado");
+            alert.innerHTML = 'Este algoritmo ya ha sido aprendido :D <br><a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>'
+          }
+          ocultarAlert();
+          actualizarAlgoritmo(nombreAlgoritmo);
+        }
+      }
+    }
+
     function ocultarAlert() {
       let alert = document.getElementById("alertFinalizado");
       alert.style.display = "block";
     }
+
+    function actualizarAlgoritmo(nombre) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://127.0.0.1:5000/actualizarAlgoritmo/', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send(`nombre=${nombre}`);
+    }
+    
+    function resultadoDeCuestionario(){
+      setTimeout(() => {
+        let alert = document.getElementById("alertCuestionario");
+        alert.style.display = "block";
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://127.0.0.1:5000/resultadoCuestionario/', true);
+        xhr.send();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let res = JSON.parse( xhr.response );
+            console.log(res);
+            alert.innerHTML = `Puntaje: ${res.puntaje}`;
+          }
+        }
+      }, 100);
+    }
+
   </script>
   </body>
   <script>
