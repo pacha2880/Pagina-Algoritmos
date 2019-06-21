@@ -283,6 +283,7 @@
             console.log("Hay envio del problema Team Queue");
             let veredicto = document.getElementById("veredictoProblema1");
             if (sub[2] == 90) {
+              actualizarProblemasResueltos('colas1');
               veredicto.className = "badge badge-success badge-pill";
               veredicto.innerHTML = "Resuelto";
             }
@@ -292,12 +293,20 @@
             console.log("Hay envio del problema Throwing cards away");
             let veredicto = document.getElementById("veredictoProblema2");
             if (sub[2] == 90) {
+              actualizarProblemasResueltos('colas2');
               veredicto.className = "badge badge-success badge-pill";
               veredicto.innerHTML = "Resuelto";
             }
           }
         });
       }
+    }
+
+    function actualizarProblemasResueltos(nombre) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://127.0.0.1:5000/actualizarProblema/', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send(`nombre=${nombre}`);
     }
   </script>
 
