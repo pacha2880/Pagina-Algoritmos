@@ -171,16 +171,74 @@
         }
       </script>
       <script>
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://127.0.0.1:5000/problemasResueltos', true);
-        xhr.send();
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-            let res = JSON.parse( xhr.response );
-            console.log(res);
-            let problemas = document.getElementById("problemasResueltos");
-            problemas.innerHTML = res.problemasResueltos;
+        setTimeout(() => {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'http://127.0.0.1:5000/problemasResueltos', true);
+          xhr.send();
+          xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              let res = JSON.parse( xhr.response );
+              console.log(res);
+              let problemas = document.getElementById("problemasResueltos");
+              problemas.innerHTML = res.problemasResueltos;
+            }
           }
+        }, 50);
+      </script>
+      <script>
+        var userID = 371974;
+        // ronaldo0:  371974
+        // MickyOr:   399158
+        /*
+          Team queue:           481
+          Throwing cards away:  1876
+        */
+    
+        var xhr3 = new XMLHttpRequest();
+        xhr3.open('GET', `https://uhunt.onlinejudge.org/api/subs-user/${userID}`, true);
+        xhr3.send();
+        xhr3.onreadystatechange = () => {
+          if (xhr3.readyState == 4 && xhr3.status == 200) {
+            let res = JSON.parse( xhr3.response );
+            console.log(res);
+            res.subs.forEach(sub => {
+              if ( sub[1] == 481 )
+              {
+                console.log("Hay envio del problema Team Queue");
+                if (sub[2] == 90) {
+                  actualizarProblemasResueltos('colas1');
+                }
+              }
+              if ( sub[1] == 1876 )
+              {
+                console.log("Hay envio del problema Throwing cards away");
+                if (sub[2] == 90) {
+                  actualizarProblemasResueltos('colas2');
+                }
+              }
+              if ( sub[1] == 870 )
+            {
+              console.log("Hay envio del problema Number Maze");
+              if (sub[2] == 90) {
+                actualizarProblemasResueltos('dijkstra1');
+              }
+            }
+            if ( sub[1] == 1927 )
+            {
+              console.log("Hay envio del problema Sending email");
+              if (sub[2] == 90) {
+                actualizarProblemasResueltos('dijkstra2');
+              }
+            }
+            });
+          }
+        }
+    
+        function actualizarProblemasResueltos(nombre) {
+          var xhr4 = new XMLHttpRequest();
+          xhr4.open('POST', 'http://127.0.0.1:5000/actualizarProblema/', true);
+          xhr4.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+          xhr4.send(`nombre=${nombre}`);
         }
       </script>
       <script>
