@@ -213,10 +213,21 @@
             let alert = document.getElementById("alertFinalizado");
             alert.innerHTML = 'Este algoritmo ya ha sido aprendido :D <br><a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>'
           }
+          else
+          {
+            aumentarEstrella();
+          }
           ocultarAlert();
           actualizarAlgoritmo(nombreAlgoritmo);
         }
       }
+    }
+
+    function aumentarEstrella() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://127.0.0.1:5000/actualizarEstrellas/', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send();
     }
 
     function ocultarAlert() {
