@@ -242,13 +242,13 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
           <h3>Problemas sugeridos</h3>
           <ul class="list-group">
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a target="_blank" href="https://codeforces.com/problemset/problem/20/C">Dijkstra?</a>
-                <span class="badge badge-success badge-pill">Resuelto</span>
+                <a target="_blank" href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=870">Number Maze</a>
+                <span id="veredictoProblema1" class="badge badge-secondary badge-pill">No resuelto</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a target="_blank" href="http://acm.timus.ru/problem.aspx?space=1&num=1930">Ivan's Car</a>
-                  <span class="badge badge-danger badge-pill">Incorrecto</span>
-                </li>
+                <a target="_blank" href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1927">Sending email</a>
+                <span id="veredictoProblema2" class="badge badge-secondary badge-pill">No resuelto</span>
+              </li>
           </ul>
           <hr>
           <!--form action=""-->
@@ -331,6 +331,46 @@ void dijkstra(int s, vector<int> & d, vector<int> & p) {
       }, 100);
     }
   </script>
+
+  <script>
+      var userID = 371974;
+      // ronaldo0:  371974
+      // MickyOr:   399158
+      /*
+        Number Maze:     870
+        Sending email:  1927
+      */
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', `https://uhunt.onlinejudge.org/api/subs-user/${userID}`, true);
+      xhr.send();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          let res = JSON.parse( xhr.response );
+          console.log(res);
+          res.subs.forEach(sub => {
+            if ( sub[1] == 870 )
+            {
+              console.log("Hay envio del problema Number Maze");
+              let veredicto = document.getElementById("veredictoProblema1");
+              if (sub[2] == 90) {
+                veredicto.className = "badge badge-success badge-pill";
+                veredicto.innerHTML = "Resuelto";
+              }
+            }
+            if ( sub[1] == 1927 )
+            {
+              console.log("Hay envio del problema Sending email");
+              let veredicto = document.getElementById("veredictoProblema2");
+              if (sub[2] == 90) {
+                veredicto.className = "badge badge-success badge-pill";
+                veredicto.innerHTML = "Resuelto";
+              }
+            }
+          });
+        }
+      }
+    </script>
+
   </body>
   <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
