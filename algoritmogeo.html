@@ -1094,52 +1094,139 @@ ftype cross(point2d a, point2d b) {
           <hr>
           
           <h2 class="blog-post-title">Propiedades</h2>
-          
+          <p>En cuanto al producto cruzado, es igual al vector cero si los vectores a y b son colineales (forman una línea común, es decir, son paralelos). Lo mismo ocurre con el producto triple, es igual a cero si los vectores a, b y c son coplanares (forman un plano común).</p>
+          <p>De esto podemos obtener ecuaciones universales definiendo líneas y planos. Una línea se puede definir a través de su dirección d vector y un punto inicial r0 o por dos puntos a y b. Se define como <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo stretchy="false">(</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">r</mi>
+            </mrow>
+            <mo>&#x2212;<!-- − --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mn>0</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <mo>&#x00D7;<!-- × --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">d</mi>
+            </mrow>
+            <mo>=</mo>
+            <mn>0</mn>
+          </math> . En cuanto a los planos, se puede definir por tres puntos a, byc como <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo stretchy="false">(</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">r</mi>
+            </mrow>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">a</mi>
+            </mrow>
+            <mo stretchy="false">)</mo>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <mo stretchy="false">(</mo>
+            <mo stretchy="false">(</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">b</mi>
+            </mrow>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">a</mi>
+            </mrow>
+            <mo stretchy="false">)</mo>
+            <mo>&#x00D7;<!-- × --></mo>
+            <mo stretchy="false">(</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">c</mi>
+            </mrow>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">a</mi>
+            </mrow>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mn>0</mn>
+          </math>o por el punto inicial r0 y dos vectores de dirección que se encuentran en este plano d1 y <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo stretchy="false">(</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">r</mi>
+            </mrow>
+            <mo>&#x2212;<!-- − --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mn>0</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">d</mi>
+              </mrow>
+              <mn>1</mn>
+            </msub>
+            <mo>&#x00D7;<!-- × --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">d</mi>
+              </mrow>
+              <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mn>0</mn>
+          </math>.</p>
+          <p>En 2D, el producto pseudoescalar también se puede usar para verificar la orientación entre dos vectores porque es positivo si la rotación del primer al segundo vector es en el sentido de las agujas del reloj y, de lo contrario, es negativa. Y, por supuesto, se puede usar para calcular áreas de polígonos, que se describe en un artículo diferente. Un producto triple se puede utilizar para el mismo propósito en el espacio 3D.</p>
+
           <hr>
 
           <h3>Cuestionario</h3>
           <form action="http://127.0.0.1:5000/cuestionarioCola" method="POST" id="cuestionario">
-            <p>¿Si se tienen las siguientes operaciones: <a class="text-monospace font-weight-bold">cola.push(2); cola.push(3); cola.push(1); cola.pop();</a> que valor devolveria <a class="text-monospace font-weight-bold">cola.front()</a>?</p>
+            <p>¿Pregunta 1?</p>
             <div class="form-group form-row">
               <div class="form-check form-check-inline col">
                   <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios1" value="option1" checked>
                   <label class="form-check-label" for="incorrecta">
-                    2
+                    respuesta1
                   </label>
               </div>
               <div class="form-check form-check-inline col">
                 <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
                 <label class="form-check-label" for="correcta">
-                  3
+                  respuesta2
                 </label>
               </div>
               <div class="form-check form-check-inline col">
                 <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option3">
                 <label class="form-check-label" for="incorrecta">
-                  1
+                  respuesta3
                 </label>
               </div>
             </div>
 
-            <p>¿Que pasa si haces <a class="text-monospace font-weight-bold">cola.pop()</a> a una cola vacia, que pasa?</p>
+            <p>¿Pregunta 2?</p>
 
             <div class="form-group form-row">
                 <div class="form-check form-check-inline col">
                   <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
                   <label class="form-check-label" for="incorrecta">
-                    Error de compilacion
+                     respuesta1
                   </label>
                 </div>
                 <div class="form-check form-check-inline col">
                   <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
                   <label class="form-check-label" for="correcta">
-                    Error en tiempo de ejecucion
+                    respuesta2
                   </label>
                 </div>
                 <div class="form-check form-check-inline col">
                   <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option3">
                   <label class="form-check-label" for="incorrecta">
-                    No pasa nada
+                    respuesta3
                   </label>
                 </div>
               </div>
@@ -1153,11 +1240,11 @@ ftype cross(point2d a, point2d b) {
           <h3>Problemas sugeridos</h3>
           <ul class="list-group">
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Team queue</a>
+                <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Problema1</a>
                 <span id="veredictoProblema1" class="badge badge-secondary badge-pill">No resuelto</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Throwing cards away I</a>
+                  <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Problema2</a>
                   <span id="veredictoProblema2" class="badge badge-secondary badge-pill">No resuelto</span>
                 </li>
           </ul>
