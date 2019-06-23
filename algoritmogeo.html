@@ -66,7 +66,1115 @@
         </div>
       </div>
     </nav>
-    geometria
+    <div class="container text-left mb-5 mt-3">
+      <div class="container">
+        <h2 class="pb-3 mb-4 font-italic border-bottom">
+          Producto cruz
+        </h2>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">Definición</h2>
+
+          <p>Supongamos que tiene tres vectores a, byc en el espacio 3D unidos en un paralelepípedo como en la siguiente imagen:</p>
+          <img src="image/240px-Parallelepiped_volume.svg.png" class="img-fluid" alt="Responsive image">
+          <p>¿Cómo calcularías su volumen? Desde la escuela sabemos que debemos multiplicar el área de la base con la altura, que es la proyección de una dirección ortogonal hacia la base. Eso significa que si definimos b × c como el vector que es ortogonal a b y c y cuya longitud es igual al área del paralelogramo formado por b y c entonces | a⋅ (b × c) | Será igual al volumen del paralelepípedo. En cuanto a la integridad, diremos que b × c siempre se dirigirá de tal manera que la rotación del vector b al vector c desde el punto de b × c sea siempre en sentido contrario a las agujas del reloj (consulte la imagen a continuación).</p>
+          <img src="image/250px-Cross_product_vector.svg.png" class="img-fluid" alt="Responsive image">
+          <p>Esto define el producto cruzado (o vector) b × c de los vectores b y c y el producto triple a⋅ (b × c) de los vectores a, by c.</p>
+          <p>Algunas propiedades notables de producto cruz:</p>
+          <ul>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>=</mo>
+              <mo>&#x2212;<!-- − --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+            </math></li>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mo stretchy="false">(</mo>
+              <mi>&#x03B1;<!-- α --></mi>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>=</mo>
+              <mi>&#x03B1;<!-- α --></mi>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+            </math></li>
+            <li>Para cualquier b y c hay exactamente un vector r tal que <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+            </math> para cualquier vector a.
+              De hecho, si hay dos de estos vectores r1 y r2, entonces <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi mathvariant="bold">a</mi>
+                </mrow>
+                <mo>&#x22C5;<!-- ⋅ --></mo>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="bold">r</mi>
+                  </mrow>
+                  <mn>1</mn>
+                </msub>
+                <mo>&#x2212;<!-- − --></mo>
+                <msub>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="bold">r</mi>
+                  </mrow>
+                  <mn>2</mn>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mn>0</mn>
+              </math> para todos los vectores a, lo que es posible solo cuando <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="bold">r</mi>
+                  </mrow>
+                  <mn>1</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="bold">r</mi>
+                  </mrow>
+                  <mn>2</mn>
+                </msub>
+              </math>.</li>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>=</mo>
+              <mo>&#x2212;<!-- − --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+            </math></li>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+            </math>. De hecho, para todos los vectores r la cadena de ecuaciones es:
+            <br>
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>=</mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">r</mi>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+            </math>
+            
+            Lo cual demuestra <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">c</mi>
+              </mrow>
+            </math> por el tercer punto.
+            </li>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>sin</mi>
+              <mo>&#x2061;<!-- ⁡ --></mo>
+              <mi>&#x03B8;<!-- θ --></mi>
+            </math> donde <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>&#x03B8;<!-- θ --></mi>
+            </math> es el angulo entre a y b, ya que <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </math> es igual al area del paralelogramo formado por a y b.</li>
+          </ul>
+          <p>Dado todo esto y que la siguiente ecuación es válida para los vectores unitarios</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>&#x00D7;<!-- × --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+            <mo>&#x00D7;<!-- × --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>z</mi>
+            </msub>
+            <mo>&#x00D7;<!-- × --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>z</mi>
+            </msub>
+            <mo>=</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn mathvariant="bold">0</mn>
+            </mrow>
+            <mo>,</mo>
+            <mspace linebreak="newline" />
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>&#x00D7;<!-- × --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>z</mi>
+            </msub>
+            <mo>,</mo>
+            <mtext>&#xA0;</mtext>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+            <mo>&#x00D7;<!-- × --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>z</mi>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>,</mo>
+            <mtext>&#xA0;</mtext>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>z</mi>
+            </msub>
+            <mo>&#x00D7;<!-- × --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+          </math>
+          <p>podemos calcular el producto cruzado de a = (x1; y1; z1) y b = (x2; y2; z2) en forma de coordenadas:</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">a</mi>
+            </mrow>
+            <mo>&#x00D7;<!-- × --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">b</mi>
+            </mrow>
+            <mo>=</mo>
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi>x</mi>
+              <mn>1</mn>
+            </msub>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>y</mi>
+              <mn>1</mn>
+            </msub>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>z</mi>
+              <mn>1</mn>
+            </msub>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>z</mi>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <mo>&#x00D7;<!-- × --></mo>
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>y</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>z</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>z</mi>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+          </math>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi>y</mi>
+              <mn>1</mn>
+            </msub>
+            <msub>
+              <mi>z</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>&#x2212;<!-- − --></mo>
+            <msub>
+              <mi>z</mi>
+              <mn>1</mn>
+            </msub>
+            <msub>
+              <mi>y</mi>
+              <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>x</mi>
+            </msub>
+            <mo>+</mo>
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi>z</mi>
+              <mn>1</mn>
+            </msub>
+            <msub>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>&#x2212;<!-- − --></mo>
+            <msub>
+              <mi>x</mi>
+              <mn>1</mn>
+            </msub>
+            <msub>
+              <mi>z</mi>
+              <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">e</mi>
+              </mrow>
+              <mi>y</mi>
+            </msub>
+            <mo>+</mo>
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi>x</mi>
+              <mn>1</mn>
+            </msub>
+            <msub>
+              <mi>y</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>&#x2212;<!-- − --></mo>
+            <msub>
+              <mi>y</mi>
+              <mn>1</mn>
+            </msub>
+            <msub>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+          </math>
+          <p>Lo cual puede ser escrito de una forma mas elegante:</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">a</mi>
+            </mrow>
+            <mo>&#x00D7;<!-- × --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi mathvariant="bold">b</mi>
+            </mrow>
+            <mo>=</mo>
+            <mrow>
+              <mo>|</mo>
+              <mtable rowspacing="4pt" columnspacing="1em">
+                <mtr>
+                  <mtd>
+                    <msub>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mi mathvariant="bold">e</mi>
+                      </mrow>
+                      <mi>x</mi>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mi mathvariant="bold">e</mi>
+                      </mrow>
+                      <mi>y</mi>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mi mathvariant="bold">e</mi>
+                      </mrow>
+                      <mi>z</mi>
+                    </msub>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>y</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mtd>
+                </mtr>
+              </mtable>
+              <mo>|</mo>
+            </mrow>
+            <mo>,</mo>
+            <mtext>&#xA0;</mtext>
+            <mi>a</mi>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <mo stretchy="false">(</mo>
+            <mi>b</mi>
+            <mo>&#x00D7;<!-- × --></mo>
+            <mi>c</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mrow>
+              <mo>|</mo>
+              <mtable rowspacing="4pt" columnspacing="1em">
+                <mtr>
+                  <mtd>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>y</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>3</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>y</mi>
+                      <mn>3</mn>
+                    </msub>
+                  </mtd>
+                  <mtd>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>3</mn>
+                    </msub>
+                  </mtd>
+                </mtr>
+              </mtable>
+              <mo>|</mo>
+            </mrow>
+          </math>
+          <p>Donde <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mo stretchy="false">|</mo>
+            </mrow>
+            <mo>&#x22C5;<!-- ⋅ --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mo stretchy="false">|</mo>
+            </mrow>
+          </math> representa la determinante de la matriz.</p>
+          <p>En el caso 2D también se puede implementar algún tipo de producto cruzado (a saber, el producto pseudoescalar). Si quisiéramos calcular el área del paralelogramo formado por los vectores a y b, calcularíamos 
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <msub>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi mathvariant="bold">e</mi>
+                </mrow>
+                <mi>z</mi>
+              </msub>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mo stretchy="false">(</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mo>&#x00D7;<!-- × --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mo stretchy="false">)</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <msub>
+                <mi>x</mi>
+                <mn>1</mn>
+              </msub>
+              <msub>
+                <mi>y</mi>
+                <mn>2</mn>
+              </msub>
+              <mo>&#x2212;<!-- − --></mo>
+              <msub>
+                <mi>y</mi>
+                <mn>1</mn>
+              </msub>
+              <msub>
+                <mi>x</mi>
+                <mn>2</mn>
+              </msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </math>. Otra forma de obtener el mismo resultado es multiplicar <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </math> (base del paralelogramo) con la altura, que es la proyección del vector b sobre el vector a girado por <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <msup>
+                <mn>90</mn>
+                <mo>&#x2218;<!-- ∘ --></mo>
+              </msup>
+            </math> lo cual es <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mover>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="bold">a</mi>
+                  </mrow>
+                  <mo>&#x005E;<!-- ^ --></mo>
+                </mover>
+              </mrow>
+              <mo>=</mo>
+              <mo stretchy="false">(</mo>
+              <mo>&#x2212;<!-- − --></mo>
+              <msub>
+                <mi>y</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>;</mo>
+              <msub>
+                <mi>x</mi>
+                <mn>1</mn>
+              </msub>
+              <mo stretchy="false">)</mo>
+            </math>. Lo que seria calcular <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mover>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="bold">a</mi>
+                  </mrow>
+                  <mo>&#x005E;<!-- ^ --></mo>
+                </mover>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mo>=</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <msub>
+                <mi>x</mi>
+                <mn>1</mn>
+              </msub>
+              <msub>
+                <mi>y</mi>
+                <mn>2</mn>
+              </msub>
+              <mo>&#x2212;<!-- − --></mo>
+              <msub>
+                <mi>y</mi>
+                <mn>1</mn>
+              </msub>
+              <msub>
+                <mi>x</mi>
+                <mn>2</mn>
+              </msub>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </math>
+          </p>
+          <p>
+            Si tomamos el signo en consideración, el área será positiva si la rotación de a a b (es decir, desde la vista del punto de <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <msub>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi mathvariant="bold">e</mi>
+                </mrow>
+                <mi>z</mi>
+              </msub>
+            </math>) se realiza en sentido contrario a las agujas del reloj y de lo contrario negativo. Eso define el producto pseudoescalar. Tenga en cuenta que también es igual a <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">a</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mo>&#x22C5;<!-- ⋅ --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="bold">b</mi>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>sin</mi>
+              <mo>&#x2061;<!-- ⁡ --></mo>
+              <mi>&#x03B8;<!-- θ --></mi>
+            </math> donde <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>&#x03B8;<!-- θ --></mi>
+            </math> es el angulo entre a y b en sentido anti-horario (negativo si la rotacion en en sentido horario).
+          </p>
+          <p>Vamos a implementar todo esto:</p>
+          <div class="container">
+            <pre class="text-monospace">
+point3d cross(point3d a, point3d b) {
+    return point3d(a.y * b.z - a.z * b.y,
+                    a.z * b.x - a.x * b.z,
+                    a.x * b.y - a.y * b.x);
+}
+ftype triple(point3d a, point3d b, point3d c) {
+    return dot(a, cross(b, c));
+}
+ftype cross(point2d a, point2d b) {
+    return a.x * b.y - a.y * b.x;
+} 
+              </pre>
+          </div>
+          <hr>
+          
+          <h2 class="blog-post-title">Propiedades</h2>
+          
+          <hr>
+
+          <h3>Cuestionario</h3>
+          <form action="http://127.0.0.1:5000/cuestionarioCola" method="POST" id="cuestionario">
+            <p>¿Si se tienen las siguientes operaciones: <a class="text-monospace font-weight-bold">cola.push(2); cola.push(3); cola.push(1); cola.pop();</a> que valor devolveria <a class="text-monospace font-weight-bold">cola.front()</a>?</p>
+            <div class="form-group form-row">
+              <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="incorrecta">
+                    2
+                  </label>
+              </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="correcta">
+                  3
+                </label>
+              </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option3">
+                <label class="form-check-label" for="incorrecta">
+                  1
+                </label>
+              </div>
+            </div>
+
+            <p>¿Que pasa si haces <a class="text-monospace font-weight-bold">cola.pop()</a> a una cola vacia, que pasa?</p>
+
+            <div class="form-group form-row">
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="incorrecta">
+                    Error de compilacion
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="correcta">
+                    Error en tiempo de ejecucion
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option3">
+                  <label class="form-check-label" for="incorrecta">
+                    No pasa nada
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-secondary" onclick="resultadoDeCuestionario();">Enviar respuestas</button>
+              <div id="alertCuestionario" class="alert alert-success mt-2" role="alert" style="display:none;">
+                  
+              </div>
+          </form>
+          <hr>
+
+          <h3>Problemas sugeridos</h3>
+          <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Team queue</a>
+                <span id="veredictoProblema1" class="badge badge-secondary badge-pill">No resuelto</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Throwing cards away I</a>
+                  <span id="veredictoProblema2" class="badge badge-secondary badge-pill">No resuelto</span>
+                </li>
+          </ul>
+          <hr>
+          <!--form action=""-->
+            <button class="btn btn-info" onclick="activarAlert();">Finalizar</button>
+          <!--/form-->
+          <br>
+          <!-- {#if finalizado} en handlebars -->
+          <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
+            ¡Tema finalizado! <br>
+            ¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br>
+            <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+          </div>
+      </div>
+    </div>
+  </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
