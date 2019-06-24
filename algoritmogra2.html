@@ -66,7 +66,292 @@
         </div>
       </div>
     </nav>
-    grafos2
+    <div class="container text-left mb-5 mt-3">
+      <div class="container">
+        <h2 class="pb-3 mb-4 font-italic border-bottom">
+          Puntos de articulacion
+        </h2>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">Definición</h2>
+
+          <p>Nos dan un gráfico no dirigido. Un punto de articulación (o vértice cortado) se define como un vértice que, cuando se elimina junto con los bordes asociados, desconecta el gráfico (o, más precisamente, aumenta el número de componentes conectados en el gráfico). La tarea es encontrar todos los puntos de articulación en el gráfico dado.</p>
+          <p>El algoritmo descrito aquí se basa en la primera búsqueda en profundidad y tiene complejidad O (N + M), donde N es el número de vértices y M es el número de bordes en la gráfica.</p>
+          <hr>
+          
+          <h2 class="blog-post-title">Algoritmo</h2>
+          <p>Elija un vértice arbitrario de la raíz del gráfico y ejecute la búsqueda en profundidad desde él. Tenga en cuenta el siguiente hecho (que es fácil de probar):</p>
+          <ul>
+            <li>Digamos que estamos en el DFS, mirando a través de los bordes comenzando desde vértice v ≠ raíz. Si el borde actual (v, a) es tal que ninguno de los vértices ao sus descendientes en el árbol transversal DFS tiene un borde posterior a ninguno de los antepasados de v, entonces v es un punto de articulación. De lo contrario, v no es un punto de articulación.</li>
+            <li>Consideremos el caso restante de v = root. Este vértice será el punto de articulación si y solo si este vértice tiene más de un hijo en el árbol DFS.</li>
+          </ul>
+          <p>Ahora tenemos que aprender a verificar este hecho para cada vértice de manera eficiente. Usaremos el "tiempo de entrada en el nodo" calculado por la primera búsqueda en profundidad.</p>
+          <p>Por lo tanto, digamos que tin [v] denota el tiempo de entrada para el nodo v. Introducimos una matriz baja [v] que nos permitirá verificar el hecho de que cada vértice v. Baja [v] es el mínimo de tin [v], los tiempos de entrada tin [p] para cada nodo p que está conectado al nodo v a través de un borde posterior (v, p) y los valores de low [to] para cada vértice del cual es un descendiente directo de v en el árbol DFS:</p>
+          <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>l</mi>
+            <mi>o</mi>
+            <mi>w</mi>
+            <mo stretchy="false">[</mo>
+            <mi>v</mi>
+            <mo stretchy="false">]</mo>
+            <mo>=</mo>
+            <mo movablelimits="true" form="prefix">min</mo>
+            <mrow>
+              <mo>{</mo>
+              <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+                <mtr>
+                  <mtd>
+                    <mi>t</mi>
+                    <mi>i</mi>
+                    <mi>n</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>v</mi>
+                    <mo stretchy="false">]</mo>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mi>t</mi>
+                    <mi>i</mi>
+                    <mi>n</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>p</mi>
+                    <mo stretchy="false">]</mo>
+                  </mtd>
+                  <mtd>
+                    <mtext>&#xA0;for all&#xA0;</mtext>
+                    <mi>p</mi>
+                    <mtext>&#xA0;for which&#xA0;</mtext>
+                    <mo stretchy="false">(</mo>
+                    <mi>v</mi>
+                    <mo>,</mo>
+                    <mi>p</mi>
+                    <mo stretchy="false">)</mo>
+                    <mtext>&#xA0;is a back edge</mtext>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mi>l</mi>
+                    <mi>o</mi>
+                    <mi>w</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>t</mi>
+                    <mi>o</mi>
+                    <mo stretchy="false">]</mo>
+                  </mtd>
+                  <mtd>
+                    <mtext>&#xA0;for all&#xA0;</mtext>
+                    <mi>t</mi>
+                    <mi>o</mi>
+                    <mtext>&#xA0;for which&#xA0;</mtext>
+                    <mo stretchy="false">(</mo>
+                    <mi>v</mi>
+                    <mo>,</mo>
+                    <mi>t</mi>
+                    <mi>o</mi>
+                    <mo stretchy="false">)</mo>
+                    <mtext>&#xA0;is a tree edge</mtext>
+                  </mtd>
+                </mtr>
+              </mtable>
+              <mo fence="true" stretchy="true" symmetric="true"></mo>
+            </mrow>
+          </math></p>          
+          <p>Ahora, hay un borde posterior del vértice v o uno de sus descendientes a uno de sus antepasados si y solo si el vértice v tiene un hijo para el cual bajo [to] &#60;tin [v]. Si baja [to] = tin [v], el borde posterior llega directamente a v; de lo contrario, se trata de uno de los antepasados de v.</p>
+          <p>Por lo tanto, el vértice v en el árbol DFS es un punto de articulación si y solo si <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>l</mi>
+            <mi>o</mi>
+            <mi>w</mi>
+            <mo stretchy="false">[</mo>
+            <mi>t</mi>
+            <mi>o</mi>
+            <mo stretchy="false">]</mo>
+            <mo>&#x2265;<!-- ≥ --></mo>
+            <mi>t</mi>
+            <mi>i</mi>
+            <mi>n</mi>
+            <mo stretchy="false">[</mo>
+            <mi>v</mi>
+            <mo stretchy="false">]</mo>
+          </math></p>
+          <hr>
+
+          <h3>Implementacion</h3>
+          <p>La implementación debe distinguir tres casos: cuando bajamos el borde en el árbol DFS, cuando encontramos un borde posterior a un antepasado del vértice y cuando regresamos a un padre del vértice. Estos son los casos:</p>
+          <ul>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>v</mi>
+              <mi>i</mi>
+              <mi>s</mi>
+              <mi>i</mi>
+              <mi>t</mi>
+              <mi>e</mi>
+              <mi>d</mi>
+              <mo stretchy="false">[</mo>
+              <mi>t</mi>
+              <mi>o</mi>
+              <mo stretchy="false">]</mo>
+              <mo>=</mo>
+              <mi>f</mi>
+              <mi>a</mi>
+              <mi>l</mi>
+              <mi>s</mi>
+              <mi>e</mi>
+            </math> - la arista es parte del arbol DFS</li>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>v</mi>
+              <mi>i</mi>
+              <mi>s</mi>
+              <mi>i</mi>
+              <mi>t</mi>
+              <mi>e</mi>
+              <mi>d</mi>
+              <mo stretchy="false">[</mo>
+              <mi>t</mi>
+              <mi>o</mi>
+              <mo stretchy="false">]</mo>
+              <mo>=</mo>
+              <mi>t</mi>
+              <mi>r</mi>
+              <mi>u</mi>
+              <mi>e</mi>
+            </math> - la arista es un back edge (se conecta a uno de sus ancestros que no es su padre)</li>
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>t</mi>
+              <mi>o</mi>
+              <mo>=</mo>
+              <mi>p</mi>
+              <mi>a</mi>
+              <mi>r</mi>
+              <mi>e</mi>
+              <mi>n</mi>
+              <mi>t</mi>
+            </math> - la arista se conecta al padre del arbol DFS</li>
+          </ul>
+          <p>Para implementar esto, debemos hacer una funcion DFS que reciba como parametro el padre del nodo actual.</p>
+          <p>Implementacion en C++:</p>
+          <pre class="text-monospace">
+int n; // number of nodes
+vector<vector<int>> adj; // adjacency list of graph
+
+vector<bool> visited;
+vector<int> tin, low;
+int timer;
+
+void dfs(int v, int p = -1) {
+    visited[v] = true;
+    tin[v] = low[v] = timer++;
+    int children=0;
+    for (int to : adj[v]) {
+        if (to == p) continue;
+        if (visited[to]) {
+            low[v] = min(low[v], tin[to]);
+        } else {
+            dfs(to, v);
+            low[v] = min(low[v], low[to]);
+            if (low[to] >= tin[v] && p!=-1)
+                IS_CUTPOINT(v);
+            ++children;
+        }
+    }
+    if(p == -1 && children > 1)
+        IS_CUTPOINT(v);
+}
+
+void find_cutpoints() {
+    timer = 0;
+    visited.assign(n, false);
+    tin.assign(n, -1);
+    low.assign(n, -1);
+    for (int i = 0; i < n; ++i) {
+        if (!visited[i])
+            dfs (i);
+    }
+}
+          </pre>
+          <p>La función principal es find_cutpoints; realiza la inicialización necesaria y comienza la búsqueda en profundidad en cada componente conectado del gráfico.</p>
+          <p>La función IS_CUTPOINT (a) es una función que procesará el hecho de que el vértice a es un punto de articulación, por ejemplo, imprimirlo (Tenga en cuenta que esto se puede llamar varias veces para un vértice).</p>
+          <hr>
+
+          <h3>Cuestionario</h3>
+          <form action="" id="cuestionario">
+            <p>¿Pregunta 1?</p>
+            <div class="form-group form-row">
+              <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="incorrecta">
+                    Respuesta 1
+                  </label>
+              </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="correcta">
+                  Respuesta 2
+                </label>
+              </div>
+              <div class="form-check form-check-inline col">
+                <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option3">
+                <label class="form-check-label" for="incorrecta">
+                  Respuesta 3
+                </label>
+              </div>
+            </div>
+
+            <p>¿Pregunta 2?</p>
+
+            <div class="form-group form-row">
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="incorrecta">
+                    1
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="correcta">
+                    2
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option3">
+                  <label class="form-check-label" for="incorrecta">
+                    3
+                  </label>
+                </div>
+              </div>
+              <p class="btn btn-secondary" onclick="resultadoDeCuestionario();">Enviar respuestas</p>
+              <div id="alertCuestionario" class="alert alert-success mt-2" role="alert" style="display:none;">
+                  
+              </div>
+          </form>
+          <hr>
+
+          <h3>Problemas sugeridos</h3>
+          <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Problema 1</a>
+                <span id="veredictoProblema1" class="badge badge-secondary badge-pill">No resuelto</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Problema 2</a>
+                  <span id="veredictoProblema2" class="badge badge-success badge-pill">Resuelto</span>
+                </li>
+          </ul>
+          <hr>
+          <!--form action=""-->
+            <button class="btn btn-info" onclick="activarAlert();">Finalizar</button>
+          <!--/form-->
+          <br>
+          <!-- {#if finalizado} en handlebars -->
+          <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
+            ¡Tema finalizado! <br>
+            ¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br>
+            <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+          </div>
+      </div>
+    </div>
+  </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
