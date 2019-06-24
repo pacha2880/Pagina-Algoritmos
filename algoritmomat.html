@@ -66,7 +66,132 @@
         </div>
       </div>
     </nav>
-    matematicas
+    <div class="container text-left mb-5 mt-3">
+        <div class="container">
+          <h2 class="pb-3 mb-4 font-italic border-bottom">
+              Principio de inclusión-exclusión
+          </h2>
+  
+          <div class="blog-post">
+            <h2 class="blog-post-title">Definición</h2>
+  
+            <p>En combinatoria, el principio de inclusión-exclusión (conocido también como principio de la criba) permite calcular el cardinal de la unión de varios conjuntos, mediante los cardinales de cada uno de ellos y todas sus posibles intersecciones.
+
+                Si A1, ..., An son conjuntos finitos entonces: </p>
+                <img src="image/inclusionExclusion/imagen1.png" alt="">
+            <p>
+                donde |A| denota el cardinal de A.
+
+                Una escritura más rigurosa pero menos legible es: 
+            </p>
+            <img src="image/inclusionExclusion/imagen2.png" alt="">
+            <p>Tomando n=2 tenemos un caso de doble conteo, podemos hallar el tamaño de la unión de dos conjuntos A y B sumando |A| y |B| y restando el tamaño de su intersección. El nombre proviene de la idea en la que el principio se basa: una muy generosa inclusión seguida de una compensadora exclusión. Si n>2 la exclusión de las parejas de intersecciones es (tal vez) demasiado rigurosa y la fórmula correcta es como se muestra, con signos alternados.</p>
+            <p>El gráfico de la derecha ilustra el caso de tres conjuntos A, B y C. Pero no se pueden utilizar varias veces </p>
+            <img src="image/inclusionExclusion/imagen3.png" alt="">
+            <hr>
+
+            <h2>El principio de inclusión-exclusión en probabilidad</h2>
+            <p>En probabilidad, para sucesos A1, ..., An en un espacio probabilístico <img src="image/inclusionExclusion/imagen4.png" alt="">, el principio de inclusión-exclusión para n = 2 toma la forma: </p>
+            <img src="image/inclusionExclusion/imagen5.png" alt="">
+            <p>Para n = 3:</p>
+            <img src="image/inclusionExclusion/imagen6.png" alt="">
+            <p>Que puede escribirse más concisamente como: </p>
+            <img src="image/inclusionExclusion/imagen7.png" alt="">
+            <p>Donde la última suma recorre los subconjuntos I de índices 1, ..., n que contienen exactamente k elementos y </p>
+            <img src="image/inclusionExclusion/imagen8.png" alt="">
+            <p>Denota la intersección de todos los Ai con índices en I. </p>
+            <p>El principio también se verifica para un espacio general de medida (<i>S</i>,<i>Σ</i>,<i>μ</i>) y subconjuntos medibles <i>A</i><sub>1</sub>, ..., <i>A<sub>n</sub></i> de medida finita sin más que reemplazar <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \mathbb {P} }">
+              <semantics>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mstyle displaystyle="true" scriptlevel="0">
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mi mathvariant="double-struck">P</mi>
+                    </mrow>
+                  </mstyle>
+                </mrow>
+                <annotation encoding="application/x-tex">{\displaystyle \mathbb {P} }</annotation>
+              </semantics>
+            </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1053af9e662ceaf56c4455f90e0f67273422eded" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.42ex; height:2.176ex;" alt="\mathbb{P}"></span> por <i>μ</i>.
+            </p>
+  
+            <h3>Cuestionario</h3>
+            <form action="" id="cuestionario">
+              <p>¿Pregunta 1?</p>
+              <div class="form-group form-row">
+                <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="incorrecta">
+                      Respuesta 1
+                    </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="correcta">
+                    Respuesta 2
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option3">
+                  <label class="form-check-label" for="incorrecta">
+                    Respuesta 3
+                  </label>
+                </div>
+              </div>
+  
+              <p>¿Pregunta 2?</p>
+  
+              <div class="form-group form-row">
+                  <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="incorrecta">
+                      1
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="correcta">
+                      2
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option3">
+                    <label class="form-check-label" for="incorrecta">
+                      3
+                    </label>
+                  </div>
+                </div>
+                <p class="btn btn-secondary" onclick="resultadoDeCuestionario();">Enviar respuestas</p>
+                <div id="alertCuestionario" class="alert alert-success mt-2" role="alert" style="display:none;">
+                    
+                </div>
+            </form>
+            <hr>
+  
+            <h3>Problemas sugeridos</h3>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Problema 1</a>
+                  <span id="veredictoProblema1" class="badge badge-secondary badge-pill">No resuelto</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Problema 2</a>
+                    <span id="veredictoProblema2" class="badge badge-secondary badge-pill">No resuelto</span>
+                  </li>
+            </ul>
+            <hr>
+            <!--form action=""-->
+              <button class="btn btn-info" onclick="activarAlert();">Finalizar</button>
+            <!--/form-->
+            <br>
+            <!-- {#if finalizado} en handlebars -->
+            <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
+              ¡Tema finalizado! <br>
+              ¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br>
+              <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+            </div>
+        </div>
+      </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
