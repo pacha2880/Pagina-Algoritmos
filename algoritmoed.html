@@ -114,7 +114,7 @@
           <hr>
 
           <h3>Cuestionario</h3>
-          <form action="http://127.0.0.1:5000/cuestionarioCola" method="POST" id="cuestionario">
+          <form action="http://127.0.0.1:5000/cuestionarioCola" method="POST" id="cuestionario" name="cuestionario">
             <p>¿Si se tienen las siguientes operaciones: <a class="text-monospace font-weight-bold">cola.push(2); cola.push(3); cola.push(1); cola.pop();</a> que valor devolveria <a class="text-monospace font-weight-bold">cola.front()</a>?</p>
             <div class="form-group form-row">
               <div class="form-check form-check-inline col">
@@ -159,7 +159,7 @@
                   </label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-secondary" onclick="resultadoDeCuestionario();">Enviar respuestas</button>
+              <p class="btn btn-secondary" onclick="postCuestionario(); resultadoDeCuestionario();">Enviar respuestas</p>
               <div id="alertCuestionario" class="alert alert-success mt-2" role="alert" style="display:none;">
                   
               </div>
@@ -197,6 +197,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    function postCuestionario() {
+      var formData = JSON.stringify($("#cuestionario").serializeArray());
+      var formJSON = JSON.parse(formData);
+      var req = {};
+      formJSON.forEach(obj => {
+        req[obj.name] = obj.value;
+      });
+      console.log(req);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://127.0.0.1:5000/cuestionarioCola', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send( `pregunta1=${req.pregunta1}&pregunta2=${req.pregunta2}` );
+      //xhr.send(`nombre=${nombre}`);
+    }
+  </script>
   <script>
     var cuestionarioResuelto = false;
     var algoritmoYaAprendido = false;
