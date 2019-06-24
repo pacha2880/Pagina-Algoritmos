@@ -66,7 +66,164 @@
         </div>
       </div>
     </nav>
-    programacion dinamica
+    <div class="container text-left mb-5 mt-3">
+        <div class="container">
+          <h2 class="pb-3 mb-4 font-italic border-bottom">
+              Substring común mas largo
+          </h2>
+  
+          <div class="blog-post">
+            <h2 class="blog-post-title">Definición</h2>
+  
+            <p>Substring es un concepto de cadenas de caracteres (string en ingles), consiste en una secuencia de cero o mas elementos consecutivos de la cadena original.</p>
+            <p>Veremos como encontrar el substring común mas largo entre dos strings.</p>
+            <h5>Ejemplos:</h5>
+            <div class="container border border-dark mb-2">
+              <p>Input : X = “GeeksforGeeks”, y = “GeeksQuiz”</p>
+              <p>Output : 5</p> 
+              <p>El substring comun mas largo es “Geeks” de tamaño 5.</p>  
+              <br>
+              <p>Input : X = “abcdxyz”, y = “xyzabcd”</p>
+              <p>Output : 4</p>
+              <p>El substring comun mas largo es “abcd” de tamaño 4.</p>
+              <br>
+              <p>Input : X = “zxabcdezy”, y = “yzabcdezx”</p>
+              <p>Output : 6</p>
+              <p>El substring comun mas largo es “abcdez” de tamaño 6.</p>
+            </div>
+            <img src="image/Longest-Common-Substring.png" class="img-fluid" alt="Responsive image">
+            <hr>
+            
+            <h2 class="blog-post-title">Solucion</h2>
+            <p>Podemos usar <strong>programacion dinamica</strong> para encontrar una solucion en O(n*m) donde n y m son el tamaño de la primera y segunda cadena respectivamente.</p>
+            <p>La idea es almacenar el sufijo comun mas largo para todas las posibles posiciones de las cadenas y reutilizar ese resultado haciendolo crecer cada que se encuentra una nueva similitud.</p>
+            <p>Para un par de cadenas (X, Y), el algoritmo seria el siguiente:</p>
+            <ul>
+              <li><strong>suff[i][j]</strong> representa el sufijo comun mas largo que termina en la posicion i para X y j para Y.</li>
+              <li>Si para alguna posicion i y j, X[i] = Y[j], entonces <strong>suff[i][j] = suff[i-1][j-1] + 1</strong>. reutilizamos el resultado calculado previamente y le aumentamos el caracter comun.</li>
+              <li>Si para alguna posicion i y j, X[i] != Y[j], entonces <strong>suff[i][j] = 0</strong>.</li>
+            </ul>
+            <p>Implementacion iterativa en C++:</p>
+            <pre class="text-monospace container">
+int LCSubStr(char *X, char *Y, int m, int n) 
+{ 
+    int LCSuff[m+1][n+1]; 
+    int result = 0;
+
+    for (int i=0; i<=m; i++) 
+    { 
+        for (int j=0; j<=n; j++) 
+        { 
+            if (i == 0 || j == 0) 
+                LCSuff[i][j] = 0; 
+  
+            else if (X[i-1] == Y[j-1]) 
+            { 
+                LCSuff[i][j] = LCSuff[i-1][j-1] + 1; 
+                result = max(result, LCSuff[i][j]); 
+            } 
+            else LCSuff[i][j] = 0; 
+        } 
+    } 
+    return result; 
+} 
+            </pre>
+            <p>Implementacion recursiva en C++:</p>
+            <pre class="text-monospace container">
+int lcs(int i, int j, int count)  
+{ 
+      
+    if (i == 0 || j == 0) 
+        return count; 
+          
+    if (X[i-1] == Y[j-1]) { 
+        count = lcs(i - 1, j - 1, count + 1); 
+    } 
+        count = max(count, max(lcs( i, j - 1, 0), lcs( i - 1, j, 0))); 
+    return count; 
+} 
+            </pre>
+            <p>La complejidad de este algoritmo es O(m*n).</p>
+            <hr>
+  
+            <h3>Cuestionario</h3>
+            <form action="" id="cuestionario">
+              <p>¿Pregunta 1?</p>
+              <div class="form-group form-row">
+                <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="incorrecta">
+                      Respuesta 1
+                    </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="correcta">
+                    Respuesta 2
+                  </label>
+                </div>
+                <div class="form-check form-check-inline col">
+                  <input class="form-check-input" type="radio" name="pregunta1" id="exampleRadios2" value="option3">
+                  <label class="form-check-label" for="incorrecta">
+                    Respuesta 3
+                  </label>
+                </div>
+              </div>
+  
+              <p>¿Pregunta 2?</p>
+  
+              <div class="form-group form-row">
+                  <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="incorrecta">
+                      1
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="correcta">
+                      2
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline col">
+                    <input class="form-check-input" type="radio" name="pregunta2" id="exampleRadios2" value="option3">
+                    <label class="form-check-label" for="incorrecta">
+                      3
+                    </label>
+                  </div>
+                </div>
+                <p class="btn btn-secondary" onclick="resultadoDeCuestionario();">Enviar respuestas</p>
+                <div id="alertCuestionario" class="alert alert-success mt-2" role="alert" style="display:none;">
+                    
+                </div>
+            </form>
+            <hr>
+  
+            <h3>Problemas sugeridos</h3>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=481">Problema 1</a>
+                  <span id="veredictoProblema1" class="badge badge-secondary badge-pill">No resuelto</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a target="_blank"  href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1876">Problema 2</a>
+                    <span id="veredictoProblema2" class="badge badge-secondary badge-pill">No resuelto</span>
+                  </li>
+            </ul>
+            <hr>
+            <!--form action=""-->
+              <button class="btn btn-info" onclick="activarAlert();">Finalizar</button>
+            <!--/form-->
+            <br>
+            <!-- {#if finalizado} en handlebars -->
+            <div id="alertFinalizado" class="alert alert-success mt-2" role="alert" style="display:none;">
+              ¡Tema finalizado! <br>
+              ¡Ganaste una estrella! Puedes ver tu progreso en <a href="perfil1.html" class="alert-link">tu perfil</a> <br>
+              <a href="algoritmos.html" class="alert-link">Volver a lista de Algoritmos</a>
+            </div>
+        </div>
+      </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
