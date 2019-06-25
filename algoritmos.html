@@ -504,6 +504,14 @@
       }
       let datos;
       async function getDatos() {
+            si = "<span class=\"badge badge-pill badge-success\">Aprendido</span>";
+            document.getElementById('cola1').innerHTML = si; 
+            document.getElementById('cola2').innerHTML = si; 
+            document.getElementById('cola3').innerHTML = si; 
+            no = "<span class=\"badge badge-pill badge-secondary\">No intentado</span>";
+            document.getElementById('dij1').innerHTML = no; 
+            document.getElementById('dij2').innerHTML = no; 
+            document.getElementById('dij3').innerHTML = no; 
         Http.open("GET", url);
         Http.send();
         Http.onreadystatechange = (e) => {
